@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { FeImageComponentModule } from 'dist/theriot.dev/fe-image-component/public-api';
+import { FeImageComponentModule } from '@theriot.dev/fe-image-component';
 import { FeCarouselComponentComponent } from './fe-carousel-component.component';
 
 @NgModule({
   declarations: [FeCarouselComponentComponent],
   imports: [FeImageComponentModule],
-  exports: [FeCarouselComponentComponent],
+  exports: [FeCarouselComponentComponent]
 })
 export class FeCarouselComponentModule {}
