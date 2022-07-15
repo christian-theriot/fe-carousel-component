@@ -3,5 +3,6 @@
   "dest": "../../../dist/theriot.dev/fe-carousel-component",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": ["style.scss"]
 }

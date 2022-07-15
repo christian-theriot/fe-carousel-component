@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { SourceSet } from '@theriot.dev/fe-image-component';
 
 export declare type CarouselSlide = {
@@ -6,7 +6,7 @@ export declare type CarouselSlide = {
     sources?: SourceSet[];
     src?: string;
     alt?: string;
-    loading?: boolean;
+    loading?: 'eager' | 'lazy';
   };
   body: string;
 };
@@ -14,7 +14,8 @@ export declare type CarouselSlide = {
 @Component({
   selector: 'fe-carousel-component',
   templateUrl: './fe-carousel-component.component.html',
-  styles: []
+  styleUrls: ['./fe-carousel-component.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class FeCarouselComponentComponent implements OnInit {
   @Input() slides: CarouselSlide[] = [];

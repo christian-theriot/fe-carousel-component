@@ -1,0 +1,28 @@
+@use 'sass:math';
+
+@mixin responsive_flex_basis($xup) {
+  &[data-xup='#{$xup}'] > .card {
+    flex-basis: math.div(100%, $xup);
+  }
+}
+
+.slider {
+  display: flex;
+
+  @include responsive_flex_basis(1);
+  @include responsive_flex_basis(2);
+  @include responsive_flex_basis(3);
+  @include responsive_flex_basis(4);
+  @include responsive_flex_basis(5);
+
+  picture {
+    display: block;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -1,19 +1,23 @@
 <div class="component component-carousel">
   <div class="carousel">
-    <div *ngFor="let slide of slides" class="card">
-      <div class="card-header">
-        <fe-image-component
-          [sources]="slide.header.sources ?? null"
-          [src]="slide.header.src ?? null"
-          [alt]="slide.header.alt ?? null"
-          [loading]="slide.header.loading ?? null"
-        ></fe-image-component>
-      </div>
-      <div class="card-body">
-        {{ slide.body }}
+    <div class="slider" [attr.data-xup]="slides.length">
+      <div *ngFor="let slide of slides" class="card">
+        <div class="card-header">
+          <fe-image-component
+            [sources]="slide.header.sources"
+            [src]="slide.header.src ?? ''"
+            [alt]="slide.header.alt ?? ''"
+            [loading]="slide.header.loading ?? 'lazy'"
+          ></fe-image-component>
+        </div>
+        <div class="card-body">
+          {{ slide.body }}
+        </div>
       </div>
     </div>
-    <button class="btn indicator-prev-btn"></button>
-    <button class="btn indicator-next-btn"></button>
+    <div class="indicators">
+      <button class="btn indicator-prev-btn">&lt;</button>
+      <button class="btn indicator-next-btn">&gt;</button>
+    </div>
   </div>
 </div>
