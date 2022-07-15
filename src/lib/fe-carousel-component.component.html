@@ -1,0 +1,19 @@
+<div class="component component-carousel">
+  <div class="carousel">
+    <div *ngFor="let slide of slides" class="card">
+      <div class="card-header">
+        <fe-image-component
+          [sources]="slide.header.sources ?? null"
+          [src]="slide.header.src ?? null"
+          [alt]="slide.header.alt ?? null"
+          [loading]="slide.header.loading ?? null"
+        ></fe-image-component>
+      </div>
+      <div class="card-body">
+        {{ slide.body }}
+      </div>
+    </div>
+    <button class="btn indicator-prev-btn"></button>
+    <button class="btn indicator-next-btn"></button>
+  </div>
+</div>
